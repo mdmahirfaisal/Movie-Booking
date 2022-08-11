@@ -19,13 +19,18 @@ const BookedShow = () => {
         <Container>
             <Card className=" mt-5">
                 <Card.Body>
-                    <h5>Movie Name:---{userInfo.movieName}</h5>
-                    <h5>User Name:---{userInfo?.fullName}</h5>
-                    <h5>User Email:---{userInfo?.email}</h5>
-                    <h5>User Phone:---{userInfo?.phone}</h5>
-                    <h5>Country:---{userInfo?.country}</h5>
-                    <h5>City:---{userInfo?.city}</h5>
-                    <h5>Zip:---{userInfo?.zip}</h5>
+                    {userInfo?.movieName ? <>
+                        <h5>Movie Name:---{userInfo.movieName}</h5>
+                        <h5>User Name:---{userInfo?.fullName}</h5>
+                        <h5>User Email:---{userInfo?.email}</h5>
+                        <h5>User Phone:---{userInfo?.phone}</h5>
+                        <h5>Country:---{userInfo?.country}</h5>
+                        <h5>City:---{userInfo?.city}</h5>
+                        <h5>Zip:---{userInfo?.zip}</h5>
+                    </>
+                        :
+                        <h1 className='text-secondary'>No Movie Booked</h1>
+                    }
                 </Card.Body>
             </Card>
         </Container>
